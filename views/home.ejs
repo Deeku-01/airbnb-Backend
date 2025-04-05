@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/nav') %>
+
+    <div class="container">
+        <h1>Welcome to Airbnb</h1>
+        
+        <div class="add-home-button">
+            <a href="/host/add-home" class="btn-add">Add Your Home</a>
+        </div>
+
+        <ul class="homes-list">
+            <% regHomes.forEach(home=>{ %>
+                <li class="home-card"> 
+                    <div class="card">
+                        <img src="<%= home.Photo %>" style="width:100%">
+                        <div class="container">
+                          <h4><b><%= home.Housename %></b></h4>
+                          <h3><%= home.location %> </h3>
+                          <span>
+                          <p><%= home.price %></p>
+                          <p><%= home.Rating %></p>
+                        </span>
+                          <p><%= home.Description %></p>
+                        </div>
+                      </div>   
+            <%})%>
+        </ul>
+    </div>
+</body>
+</html>
